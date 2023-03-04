@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="floppy-disk.png" />
+    <None Remove="Images\floppy-disk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\floppy-disk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\ViewModel\" />
+    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+
+</Project>
