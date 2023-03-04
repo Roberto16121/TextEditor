@@ -19,5 +19,3 @@ C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\refint\TextEdito
 C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\TextEditor.pdb
 C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\TextEditor.genruntimeconfig.cache
 C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\ref\TextEditor.dll
-C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\MVVM\View\Test1.g.cs
-C:\Users\lazar\source\repos\TextEditor\obj\Debug\net6.0-windows\MVVM\View\Test1.baml

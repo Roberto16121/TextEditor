@@ -1,24 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="floppy-disk.png" />
     <None Remove="Images\floppy-disk.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Images\floppy-disk.png" />
   </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Images\new-document.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Images\minus.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Images\exit-full-screen.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Images\cancel.png" />
+	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\ViewModel\" />
-    <Folder Include="MVVM\Model\" />
+    <Folder Include="Core\" />
   </ItemGroup>
 
 </Project>

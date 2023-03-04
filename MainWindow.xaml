@@ -12,62 +12,85 @@
         AllowsTransparency="True"
         >
     <Border
-        x:Name="nume"
+        x:Name="Border"
         Background="AliceBlue"
         CornerRadius="10">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="15"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="15"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="35"/>
                 <RowDefinition/>
 
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="1" Margin="1" Orientation="Horizontal" >
+            <DockPanel Grid.Row="0" Grid.Column="1" Background="Transparent"  Loaded="Header_Loaded"  LastChildFill="False"  Width="800" HorizontalAlignment="Left" />
+            <DockPanel Grid.Row="1" Grid.Column="2" Background="Transparent"  Loaded="Header_Loaded"  LastChildFill="False"  Width="800" HorizontalAlignment="Left" />
+            <DockPanel Grid.Row="1" Grid.Column="0" Background="Transparent"  Loaded="Header_Loaded"  LastChildFill="False"  Width="800" HorizontalAlignment="Left" />
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"  >
                 <Button 
                     x:Name ="Save" 
                     Width="25" Height="25" 
                     HorizontalAlignment ="Left" 
                     Click="Save_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Images/floppy-disk.png"/>
-                    </Button.Background>
+                    <Button.Content>
+                        <Image Source="Images/floppy-disk.png"/>
+                    </Button.Content>
                 </Button>
                 <Button 
                     x:Name ="New"
                     Width="25" Height="25"
                     HorizontalAlignment ="Left"
-                    Content="N"
-                    Click ="New_Click"/>
-               
+                    Click ="New_Click">
+                    <Button.Content>
+                        <Image Source="Images/new-document.png"/>
+                    </Button.Content>
+                </Button>
+
 
             </StackPanel>
             <StackPanel Margin="2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button                 
+                    x:Name="Minimize"
+                    Width="25" Height="25"
+                    HorizontalAlignment="Right"
+                    Click="Minimize_Click">
+                    <Button.Content>
+                        <Image Source="Images/minus.png"/>
+                    </Button.Content>
+                </Button>
                 <Button
                     x:Name="WindowRes"
                     Width="25" Height="25"
                     HorizontalAlignment="Right"
-                    Content="R"
-                    Click="WindowRes_Click"
-                    />
+                    Click="WindowRes_Click">
+                    <Button.Content>
+                        <Image Source="Images/exit-full-screen.png"/>
+                    </Button.Content>
+                </Button>
+
                 <Button
                     
-                    x:Name="Close"
+                    x:Name="CloseButton"
                     Width="25" Height="25"
                     HorizontalAlignment="Right"
-                    Content="E"
-                    Click="Close_Click"/>
-                
+                    Click="Close_Click">
+                    <Button.Content>
+                        <Image Source="Images/cancel.png"/>
+                    </Button.Content>
+                </Button>
+
             </StackPanel>
             <RichTextBox 
                 VerticalScrollBarVisibility="Visible"
                 x:Name ="TextB"
                 Grid.Column="1" Grid.Row="1"
-                TextInput="TextB_TextInput"/>
+                TextInput="TextB_TextInput"
+                AcceptsTab="True"/>
+
 
         </Grid>
     </Border>
