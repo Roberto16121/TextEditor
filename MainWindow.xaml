@@ -11,10 +11,25 @@
         Background="Transparent"
         AllowsTransparency="True"
         >
+    <Window.Resources>
+        <RoutedUICommand x:Key="SaveCommand"/>
+        <RoutedUICommand x:Key="NewCommand"/>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="{StaticResource SaveCommand}"/>
+        <KeyBinding Key="N" Modifiers="Control" Command="{StaticResource NewCommand}"/>
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource SaveCommand}" Executed="SaveToFileMethod"/>
+        <CommandBinding Command="{StaticResource NewCommand}" Executed="NewCommandMethod"/>
+    </Window.CommandBindings>
+
+   
     <Border
         x:Name="Border"
         Background="AliceBlue"
         CornerRadius="10">
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15"/>
@@ -31,6 +46,15 @@
             <DockPanel Grid.Row="1" Grid.Column="2" Background="Transparent"  Loaded="Header_Loaded"  LastChildFill="False"  Width="800" HorizontalAlignment="Left" />
             <DockPanel Grid.Row="1" Grid.Column="0" Background="Transparent"  Loaded="Header_Loaded"  LastChildFill="False"  Width="800" HorizontalAlignment="Left" />
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"  >
+                <Button 
+                    x:Name ="Load" 
+                    Width="25" Height="25" 
+                    HorizontalAlignment ="Left" 
+                    Click="Load_Click">
+                    <Button.Content>
+                        <Image Source="Images/download-file.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
                 <Button 
                     x:Name ="Save" 
                     Width="25" Height="25" 
@@ -49,9 +73,12 @@
                         <Image Source="Images/new-document.png"/>
                     </Button.Content>
                 </Button>
-
+                
 
             </StackPanel>
+           
+            
+            
             <StackPanel Margin="2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button                 
                     x:Name="Minimize"
@@ -88,8 +115,10 @@
                 VerticalScrollBarVisibility="Visible"
                 x:Name ="TextB"
                 Grid.Column="1" Grid.Row="1"
-                TextInput="TextB_TextInput"
+                TextChanged="TextB_TextChanged"
                 AcceptsTab="True"/>
+
+
 
 
         </Grid>
